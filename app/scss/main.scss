@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans',sans-serif;
+	font-size: 16px;
+}
+
+.container {
+	max-width:1200px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+h1,h2 {
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+header {
+	width: 100%;
+	padding: 10px 0;
+	background-color: azure;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+
+.header-inner,.header-logo,nav {
+	display: flex;
+}
+
+.header-logo {
+	font-weight: 700;
+	font-size: 18px;
+	border: 1px solid black;
+	border-radius: 5px;
+	transition: all 0.5s ease;
+	&:hover {
+		border-radius: 10px;
+		color: grey;
+		border-color: grey;
+	}
+	p {
+		padding: 10px;
+		margin: 0;
+	}
+}
+
+.header-inner {
+	width: 100%;
+	nav {
+		flex:0 1 100%;
+		flex-wrap: wrap;
+	}
+	ul {
+		flex:0 1 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	li {
+		font-weight: 600;
+		padding-left: 15px;
+		transition: all 0.5s ease;
+		&:first-of-type{
+			
+		}
+		&:hover{
+			color: grey;
+		}
+
+	}
+}
+.nav-box {
+	flex:0 1 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+
+@media (max-width: 767px) {
+	nav {
+		ul {
+			flex-direction: column;
+			li:first-of-type {
+				padding-left:15px;
+			}
+		}
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top:0;
+		left: -100%;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(0,0,0,.2);
+		box-shadow: 0 0 10px rgba(0,0,0,.2);
+		overflow: auto;
+		transition: all 0.5s ease;
+	}
+	.menu-burger {
+		width:40px;
+		height: 30px;
+		display: flex;
+		position: relative;
+		align-items: center;
+		z-index: 1;
+		span,&:before,&:after {
+			height: 3px;
+			width: 100%;
+			display: flex;
+			content: '';
+			background-color: #000;
+			position: absolute;
+			transition: all 0.4s ease;
+		}
+		&:before {
+			top: 0;
+		}
+		&:after{
+			bottom: 0;
+
+		}
+	}
+	.menu-burger.open-menu {
+		span{
+			opacity: 0;
+		}
+		&:before{
+			transform: rotate(48deg);
+			top:15px;
+		}
+		&:after{
+			transform: rotate(-48deg);
+			bottom: 12px;
+
+		}
+	}
+	.fixed-page {
+		overflow: hidden;
+	}
+	.open-menu {
+		left: 0;
+	}
+}
